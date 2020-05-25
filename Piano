@@ -1,0 +1,70 @@
+Part I
+
+1. Get a list of all users
+GET /users/ HTTP/1.1
+Host: https://besttester.izh
+
+2. Add three new users to the database
+POST /create/ HTTP/1.1
+Host: https://besttester.izh
+Content-Type: application/json;
+{
+  "first_name" : "User1",
+  "last_name" : "Last_name1",
+  "email" : "User1@mail.com"
+  "location" : "Izhevsk",
+  "experience" : "12"
+  "age" : "35"
+  "gender" : "male"
+  "salary" : "100000"
+}
+
+POST /create/ HTTP/1.1
+Host: https://besttester.izh
+Content-Type: application/json;
+{
+  "first_name" : "User2",
+  "last_name" : "Last_name2",
+  "email" : "User2@mail.com"
+  "location" : "Izhevsk",
+  "experience" : "15"
+  "age" : "38"
+  "gender" : "male"
+  "salary" : "150000"
+}
+
+POST /create/ HTTP/1.1
+Host: https://besttester.izh
+Content-Type: application/json;
+{
+  "first_name" : "User3",
+  "last_name" : "Last_name3",
+  "email" : "User3@mail.com"
+  "location" : "Izhevsk",
+  "experience" : "6"
+  "age" : "26"
+  "gender" : "male"
+  "salary" : "50000"
+}
+
+3. Get a list of users with desired salary <100000
+
+POST /login HTTP/1.1
+Host: https://api.besttester.izh
+Content-Type: application/json;
+{
+  "email" : "Company1@mail.com",
+  "password" : "123456"
+}
+
+GET /users?salary=0-100000 HTTP/1.1
+Host: https://api.besttester.izh
+Authorization: Bearer <api_token>
+
+Part II
+
+In your opinion, when is it better to use POST vs GET requests? Please, provide
+all possible reasons why.
+
+1. POST can transmit a larger amount of information than GET. 'POST' has no size restrictions for transmitted data.
+2. POST sends information to the server without revealing anything in the address bar of the browser.
